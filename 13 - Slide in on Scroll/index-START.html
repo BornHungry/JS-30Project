@@ -243,8 +243,13 @@
       window.addEventListener("scroll", checkSlide);
       function checkSlide() {
         sliderImages.forEach((element) => {
+          console.log("window.scrollY: ", window.scrollY);
+          console.log("window.innerHeight:", window.innerHeight);
+          console.log("element.height: ", element.height);
+          console.log("element.offsetTop: ", element.offsetTop);
+
           const slideInAt =
-            window.scrollY + window.innerHeight - element.height / 2;
+            window.scrollY + window.innerHeight - element.height / 4;
 
           const isHalfShown = slideInAt > element.offsetTop;
 
